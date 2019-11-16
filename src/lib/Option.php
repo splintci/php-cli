@@ -5,6 +5,13 @@ namespace CynoBit\PHPCLI;
 class Option
 {
     protected $app;
+    /**
+     * [getArgV Safely gets the command line arguments]
+     *
+     * @throws Exception
+     * 
+     * @return array
+     */
     private function getArgV(): array
     {
         global $argv;
