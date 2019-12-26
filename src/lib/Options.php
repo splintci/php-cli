@@ -2,7 +2,9 @@
 
 namespace CynoBit\PHPCLI;
 
-class Option
+use Exception;
+
+class Options
 {
     protected $app;
     /**
@@ -18,10 +20,7 @@ class Option
         if (!is_array($argv)) {
             if (!@is_array($_SERVER['argv'])) {
                 if (!@is_array($GLOBALS['HTTP_SERVER_VARS']['argv'])) {
-                    throw new Exception(
-                        "Could not read cmd args (register_argc_argv=Off?)",
-                        Exception::E_ARG_READ
-                    );
+                    throw new Exception("Could not read cmd args (register_argc_argv=Off?)");
                 }
                 return $GLOBALS['HTTP_SERVER_VARS']['argv'];
             }
