@@ -13,3 +13,5 @@ class Splint extends CLI
     {
     }
 }
+
+$app = new Splint();
