@@ -3,8 +3,8 @@
     "type": "project",
     "description": "Splint: Package, Depandency Manager, and Hack for Code Igniter.",
     "keywords": [
-        "framework",
-        "laravel"
+        "splint",
+        "codeigniter"
     ],
     "autoload": {
         "psr-4": {
