@@ -1,0 +1,14 @@
+{
+    "name": "cynobit/splint",
+    "type": "project",
+    "description": "Splint: Package, Depandency Manager, and Hack for Code Igniter.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "autoload": {
+        "psr-4": {
+            "CynoBit\\PHPCLI\\": "src/lib/cli"
+        }
+    }
+}
