@@ -6,7 +6,6 @@ use Exception;
 
 class Options
 {
-    protected $app;
     /**
      * [getArgV Safely gets the command line arguments]
      *
