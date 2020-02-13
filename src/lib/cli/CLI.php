@@ -10,7 +10,7 @@ abstract class CLI
     /**
      * Undocumented variable
      *
-     * @var [type]
+     * @var Options
      */
     protected $options;
 
@@ -31,6 +31,8 @@ abstract class CLI
      */
     abstract protected function setup(Options $options): void;
 
+    abstract public function main(Options $options): void;
+
     /**
      * Undocumented function
      *
@@ -41,6 +43,45 @@ abstract class CLI
         if ('cli' != php_sapi_name()) {
             throw new Exception('This has to be run from the command line');
         }
+
+        $this->setup($this->options);
+        $this->registerDefaultOptions();
+        $this->parseOptions();
+        $this->handleDefaultOptions();
+        //$this->checkArgments();
+        $this->main($this->options);
         exit(0);
+    }
+
+    protected function registerDefaultOptions(): void
+    {
+        $this->options->registerOption(
+            'help',
+            'Display application help screen.',
+            'h'
+        );
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    protected function handleDefaultOptions(): void
+    {
+        if ($this->options->getOption('help')) {
+            echo $this->options->help();
+            exit(0);
+        }
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    protected function parseOptions(): void
+    {
+        $this->options->parseOptions();
     }
 }
