@@ -8,7 +8,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "CynoBit\\PHPCLI\\": "src/lib/cli"
+            "CynoBit\\PHPCLI\\": "src/lib/cli",
+            "CynoBit\\Splint\\Commands\\": "src/commands"
         }
     }
 }
